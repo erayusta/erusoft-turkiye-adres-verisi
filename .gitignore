@@ -1,0 +1,11 @@
+.DS_Store
+
+# Yerel sırlar — asla commit etme
+config.php
+
+# Veritabanı yedekleri
+*.sql
+
+# Büyük veri dışa aktarımı (yerel/Release olarak dağıtılır), örnekler hariç
+data/*.json
+!data/ornek-*.json

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<style>
+  :root { color-scheme: light dark; }
+  body { width: 340px; margin: 0; padding: 14px;
+         font: 13px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  h1 { font-size: 14px; margin: 0 0 10px; }
+  label { display: block; margin: 10px 0 3px; font-weight: 600; font-size: 12px; }
+  select, input[type=number] { width: 100%; box-sizing: border-box; padding: 5px 6px;
+                  font: inherit; border: 1px solid #8884; border-radius: 5px;
+                  background: canvas; color: canvastext; }
+  select[multiple] { height: 108px; }
+  .satir { display: flex; gap: 8px; }
+  .satir > div { flex: 1; }
+  .onay { display: flex; align-items: center; gap: 6px; margin-top: 10px;
+          font-size: 12px; font-weight: 600; }
+  .onay input { margin: 0; }
+  button { flex: 1; padding: 7px; margin-top: 10px; font: inherit; font-weight: 600;
+           border: 0; border-radius: 6px; background: #2f6fed; color: #fff; cursor: pointer; }
+  button.ikincil { background: #8883; color: canvastext; }
+  button:disabled { opacity: .45; cursor: default; }
+  #durum { margin-top: 12px; padding: 9px; border-radius: 6px; background: #8881;
+           font-size: 12px; white-space: pre-wrap; min-height: 40px; }
+  .bar { height: 6px; border-radius: 3px; background: #8883; margin-top: 7px; overflow: hidden; }
+  .bar > i { display: block; height: 100%; background: #2f6fed; width: 0; transition: width .3s; }
+  .not { font-size: 11px; opacity: .7; margin-top: 8px; }
+  .uyari { font-size: 11px; margin-top: 6px; color: #c47f00; }
+</style>
+</head>
+<body>
+  <h1>NVİ Adres Verisi Çekici</h1>
+
+  <input id="derinlik" type="hidden" value="3">
+  <strong>Tüm Türkiye · sokak/cadde seviyesi (kapı no yok)</strong>
+  <div id="tahmin" class="uyari"></div>
+
+  <select id="iller" multiple hidden></select>
+
+  <div class="satir">
+    <div>
+      <label for="es">Eşzamanlı</label>
+      <input id="es" type="number" min="1" max="12" value="5">
+    </div>
+    <div>
+      <label for="bekle">Bekleme (ms)</label>
+      <input id="bekle" type="number" min="0" max="3000" value="120">
+    </div>
+  </div>
+
+  <div class="satir">
+    <button id="devam">Devam et (kaldığı yerden)</button>
+    <button id="dur" class="ikincil">Durdur</button>
+  </div>
+  <button id="basla" class="ikincil">⚠ Baştan başla (ilerlemeyi sıfırla)</button>
+  <button id="guncelle" class="ikincil">Güncelleme kontrolü (yeni il/ilçe/mahalle)</button>
+  <button id="test" class="ikincil">API bağlantısını test et</button>
+
+  <div id="durum">Hazır.</div>
+  <div class="bar"><i id="bar"></i></div>
+  <div class="not">Sekme yenilenince otomatik kaldığı yerden devam eder (Faz 1 baştan çalışmaz).
+    "Baştan başla" yalnızca tüm ilerlemeyi sıfırlamak istediğinde kullanılır.</div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

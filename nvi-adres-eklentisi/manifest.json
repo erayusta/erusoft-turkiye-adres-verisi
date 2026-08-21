@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "NVİ Adres Verisi Çekici",
+  "version": "2.0.0",
+  "description": "e-Devlet adres formundan il / ilçe / mahalle / cadde-sokak verisini toplar.",
+  "permissions": ["storage", "unlimitedStorage", "scripting"],
+  "host_permissions": ["https://www.turkiye.gov.tr/*", "https://adres.test/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.turkiye.gov.tr/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "NVİ Adres Verisi Çekici"
+  }
+}
