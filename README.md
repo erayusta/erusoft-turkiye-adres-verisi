@@ -1,4 +1,23 @@
-# NVİ Adres Verisi Çekici
+<div align="center">
+
+# 🇹🇷 Türkiye Adres Verisi
+
+### İl · İlçe · Mahalle · Cadde-Sokak — hazır dosyalar + toplayıcı araç
+
+[![Lisans: MIT](https://img.shields.io/badge/Lisans-MIT-brightgreen.svg)](LICENSE)
+[![Sürüm](https://img.shields.io/github/v/release/erayusta/erusoft-turkiye-adres-verisi?label=s%C3%BCr%C3%BCm&color=blue)](https://github.com/erayusta/erusoft-turkiye-adres-verisi/releases/latest)
+[![İndirme](https://img.shields.io/github/downloads/erayusta/erusoft-turkiye-adres-verisi/total?label=indirme&color=orange)](https://github.com/erayusta/erusoft-turkiye-adres-verisi/releases)
+[![Veri](https://img.shields.io/badge/kapsam-81_il_·_1.27M_sokak-informational)](data/)
+[![PHP](https://img.shields.io/badge/PHP-8%2B-777bb4.svg)](https://www.php.net/)
+[![MySQL](https://img.shields.io/badge/MySQL-8%2B-4479a1.svg)](https://www.mysql.com/)
+
+**[⬇️ Hazır veriyi indir](#hazır-veri-indir-ve-kullan--kod-bilmeye-gerek-yok)** ·
+**[📦 Sürümler](https://github.com/erayusta/erusoft-turkiye-adres-verisi/releases/latest)** ·
+**[🚀 Kurulum](#kurulum)**
+
+</div>
+
+---
 
 Türkiye'nin **il → ilçe → mahalle → cadde/sokak** idari adres ağacını e-Devlet'in
 kendi adres formundan toplayan bir Chrome eklentisi + yerel PHP/MySQL API'si.
@@ -19,10 +38,10 @@ Veriyi kendin toplamana gerek yok; hazır dosyalar [`data/`](data/) klasöründe
   çift tıkla aç (UTF-8, `;` ayraç). Örn. `data/csv/istanbul.csv`.
 - 🧑‍💻 **Geliştirici için:** [`data/json/`](data/json/) — il bazlı iç içe
   (ilçe→mahalle→sokak) JSON. Web/mobil adres seçicide doğrudan kullan.
-- 🗄️ **Veritabanı için:** [`data/tam/turkiye-adres-sql.zip`](data/tam/) — tüm tabloların
-  MySQL dökümü (aç → `mysql` ile içeri al).
-- 📦 **Tek parça tümü:** [`data/tam/turkiye-adres-json.zip`](data/tam/) — tüm Türkiye'nin
-  iç içe JSON'u (açılınca ~100 MB) ve yukarıdaki SQL zip'i.
+- 🗄️ **Veritabanı için:** [turkiye-adres-sql.zip ⬇️](https://github.com/erayusta/erusoft-turkiye-adres-verisi/releases/latest/download/turkiye-adres-sql.zip)
+  — tüm tabloların MySQL dökümü (aç → `mysql` ile içeri al).
+- 📦 **Tek parça tümü:** [turkiye-adres-json.zip ⬇️](https://github.com/erayusta/erusoft-turkiye-adres-verisi/releases/latest/download/turkiye-adres-json.zip)
+  — tüm Türkiye'nin iç içe JSON'u (açılınca ~100 MB).
 - 📋 Tüm illerin listesi ve sayıları: [`data/README.md`](data/README.md).
 
 **Kapsam:** 81 il · 973 ilçe · ~73 bin mahalle · ~1,27 milyon cadde/sokak. Kapı/bina no yoktur.
