@@ -11,8 +11,25 @@ kamuya açık idari adres verisini yerel bir veritabanında tutmak.
 
 ---
 
+## Hazır veri (indir ve kullan) — kod bilmeye gerek yok
+
+Veriyi kendin toplamana gerek yok; hazır dosyalar [`data/`](data/) klasöründe:
+
+- 📊 **Excel için:** [`data/csv/`](data/csv/) — kendi ilinin `.csv` dosyasını indir,
+  çift tıkla aç (UTF-8, `;` ayraç). Örn. `data/csv/istanbul.csv`.
+- 🧑‍💻 **Geliştirici için:** [`data/json/`](data/json/) — il bazlı iç içe
+  (ilçe→mahalle→sokak) JSON. Web/mobil adres seçicide doğrudan kullan.
+- 🗄️ **Veritabanı için:** [`data/sql/turkiye-adres.sql.gz`](data/sql/) — tüm tabloların
+  MySQL dökümü (`gunzip` ile aç, `mysql` ile içeri al).
+- 📋 Tüm illerin listesi ve sayıları: [`data/README.md`](data/README.md).
+
+**Kapsam:** 81 il · 973 ilçe · ~73 bin mahalle · ~1,27 milyon cadde/sokak. Kapı/bina no yoktur.
+
+---
+
 ## İçindekiler
 
+- [Hazır veri](#hazır-veri-indir-ve-kullan--kod-bilmeye-gerek-yok)
 - [Nasıl çalışır](#nasıl-çalışır)
 - [Veri kapsamı](#veri-kapsamı)
 - [Kurulum](#kurulum)
@@ -139,8 +156,16 @@ php -d memory_limit=3G export_json.php cikti.json # verilen yola
 ```
 
 Tam çıktı büyük olduğundan (~100 MB) repoya **girmez** (`.gitignore`); yerel
-kullanım veya GitHub Release eki olarak dağıtılır. Repoda formatı gösteren küçük
-bir örnek vardır: [`data/ornek-bayburt.json`](data/ornek-bayburt.json).
+kullanım veya GitHub Release eki olarak dağıtılır.
+
+Repoya basılan **il bazlı** CSV / JSON dosyalarını ve `data/README.md` indeksini
+üretmek için:
+
+```bash
+php -d memory_limit=1G export_data.php   # data/csv/, data/json/, data/README.md
+```
+
+SQL dökümü ise standart `mysqldump` ile alınır (repoda `data/sql/turkiye-adres.sql.gz`).
 
 ## Veri formatı
 

@@ -3,9 +3,8 @@
 # Yerel sırlar — asla commit etme
 config.php
 
-# Veritabanı yedekleri
+# Ham SQL yedekleri (data/sql/*.sql.gz hariç — o commit edilir)
 *.sql
 
-# Büyük veri dışa aktarımı (yerel/Release olarak dağıtılır), örnekler hariç
-data/*.json
-!data/ornek-*.json
+# Tek parça dev JSON (99 MB) — il bazlı dosyalar zaten data/ içinde
+data/adres.json
